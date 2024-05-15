@@ -1,0 +1,24 @@
+version: '3.8'
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+  productapp:
+    build: ./ProductApp
+    ports:
+      - "5005:5000"
+  reviewapp:
+    build: ./ReviewApp
+    ports:
+      - "5003:5003"
+  cartapp:
+    build: ./CartApp
+    ports:
+      - "5001:5001"
+  mainapp:
+    build: ./MainApp
+    ports:
+      - "5004:5004"
+
